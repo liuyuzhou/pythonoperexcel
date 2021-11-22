@@ -1,0 +1,433 @@
+print('Hello,world!)
+
+
+1.2  数 据 类 型
+
+>>> 31
+31
+
+
+>>> 15 + 15
+30
+>>> 31 - 30
+1
+>>> 31 * 2
+62
+>>> 155 / 31
+5.0
+
+
+>>> 156 / 31
+5.032258064516129
+
+
+>>> 155 // 31
+5
+
+
+>>> 156 // 31
+5
+
+
+>>> 155 % 31
+0
+>>> 156 % 31
+1
+
+
+>>> 5.3*62
+328.59999999999997
+
+
+>>> int(560.1)
+560
+
+
+>>> float(560.1)
+560.1
+
+
+>>> float(int(560.1))
+560.0
+
+
+1.3  变量和关键字
+>>> xiaohong = 'XiaoHong'
+>>>
+
+
+>>> print(xiaohong)
+XiaoHong
+
+
+>>> abc
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'abc' is not defined
+
+
+>>> a = 123
+>>> a
+123
+>>> a = 'ABC'
+>>> print(a)
+ABC
+
+
+>>> type('Hello,world!')
+<class 'str'>
+
+
+>>> type(50)
+<class 'int'>
+>>> type(5.0)
+<class 'float'>
+>>> a = 'test type'
+>>> type(a)
+<class 'str'>
+
+
+>>> type('test single quotes')
+<class 'str'>
+>>> type("test double quote")
+<class 'str'>
+>>> type("100")
+<class 'str'>
+
+
+a = 100
+a = a + 200
+
+
+>>> a = 100
+>>> a = a + 200
+>>> print(a)
+300
+
+
+>>> a = '123'
+
+
+>>> a = '123'
+>>> b = a
+>>> a = '456'
+>>> print(b)
+
+
+>>> name = 'study python is happy'
+>>> Name = 'I agree with you'
+>>> print(name)
+study python is happy
+>>> print(Name)
+I agree with you
+
+
+>>> happy_study = 'stay hungry stay foolish'
+>>> print(happy_study)
+stay hungry stay foolish
+
+
+>>> 2wrongtest = 'just for test'
+  File "<stdin>", line 1
+    2wrongtest='just for tes
+             ^
+SyntaxError: invalid syntax
+
+
+>>> xiaoming@me = 'surprised'
+  File "<stdin>", line 1
+SyntaxError: can't assign to operator
+
+
+>>> and='use and as variable name'
+SyntaxError: invalid syntax
+
+
+>>> import keyword
+>>> keyword.kwlist
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+
+
+1.4  运算符和操作对象
+>>> a = 10
+>>> b = 5
+>>> print(a ** b)
+100000
+>>> print(9 // 2)
+4
+
+>>> 2 ** 32 / 1024 / 1024 / 1024
+4.0
+>>> 2 ** 64 / 1024 / 1024 / 1024
+17179869184.0
+
+
+>>> a = 10
+>>> b = 20
+>>> a == b
+False
+>>> a != b
+True
+>>> a > b
+False
+>>> a < b
+True
+>>> a >= b
+False
+>>> a <= b
+True
+
+
+>>> a = 10
+>>> b = 20
+>>> c = 0
+>>> c = a + b
+>>> print(c)
+30
+>>> c += 10
+>>> print(c)
+40
+>>> c -= a
+>>> print(c)
+30
+>>> c *= a
+>>> print(c)
+300
+>>> c /= a
+>>> print(c)
+30.0
+>>> c %= a
+>>> print(c)
+0.0
+>>> c = a ** 5
+>>> print(c)
+100000
+>>> c //= b
+>>> print(b)
+20
+>>> print(c)
+5000
+
+
+1.5  注    释
+
+>>> # 打印1+1的结果
+>>> print(1 + 1)
+2
+>>> print(1 + 1) # 打印1+1的结果
+2
+
+
+>>> r = 10    #将10赋值给r
+
+
+>>> r = 10    #半径，单位是米
+
+
+1.6  字符串的简单操作
+>>> ''   			#创建单引号引起的空字符串
+''
+>>> ""  			#创建双引号引起的空字符串
+''
+>>> 'hello'   		#创建单引号引起的非空字符串
+'hello'
+>>> "python"   	#创建双引号引起的非空字符串
+'python'
+>>> empy=''   			#创建空字符串，将字符串赋给变量empy
+>>> say='hello,world'  	#创建非空字符串，并将字符串赋给变量say
+
+
+>>> print('读万卷书，\n行万里路。')
+读万卷书，
+行万里路。
+
+
+>>> print(''读万卷书'\n'行万里路'') 	#不使用转义字符，全用单引号
+  SyntaxError: invalid syntax
+>>> print(""读万卷书"\n"行万里路"") 	#不使用转义字符，全用单引号
+SyntaxError: invalid syntax
+>>> print("'读万卷书'\n'行万里路'")	#不使用转义字符，字符串用双引号引起，里面都用单引号
+'读万卷书'
+'行万里路'
+
+
+1.7  字符串格式化
+>>> print('hi,%s' % 'python')
+hi,python
+>>> print('一年有%s个月' % 12)
+一年有12个月
+>>> print('%s年的冬奥会将在%s举行，预测中国至少赢取%d枚金牌' % ('2022','北京',5))
+2022年的冬奥会将在北京举行，预测中国至少赢取5枚金牌
+
+
+>>> 'hello,{}'.format('world')
+'hello,world'
+>>> print('圆周率PI的值为：{0}'.format(3.141593))
+圆周率PI的值为：3.141593
+>>> print('圆周率PI的值为：{pi}'.format(pi=3.141593))
+圆周率PI的值为：3.141593
+>>> print('{}年的冬奥会将在{}举行，预测中国至少赢取{}枚金牌'.format('2022','北京',5))
+2022年的冬奥会将在北京举行，预测中国至少赢取5枚金牌
+
+
+>>> print('{0}年的冬奥会将在{2}举行'.format('2022',5,'beijing','sh'))
+2022年的冬奥会将在beijing举行
+
+
+>>> print('{year}年的冬奥会将在{address}举行'.format(year='2022',address='北京', num=5))
+2022年的冬奥会将在北京举行
+
+
+>>> f'hello,{world}'
+'hello,world'
+>>> f'{2*10}'
+'20'
+>>> year = 2022
+>>> address = '北京'
+>>> gold = 5
+>>> f'{year}年的冬奥会将在{address}举行，预测中国至少赢取{gold}枚金牌'
+'2022年的冬奥会将在北京举行，预测中国至少赢取5枚金牌'
+>>> print(f'{year}年的冬奥会将在{address}举行，预测中国至少赢取{gold}枚金牌')
+2022年的冬奥会将在北京举行，预测中国至少赢取5枚金牌
+
+
+>>> name='xiaomeng'
+>>> number=1001
+>>> print(f'name={name}, number={number}')
+name=xiaomeng, number=1001
+
+
+>>> name='xiaomeng'
+>>> number=1001
+>>> print(f'{name=}, {number=}')
+name='xiaomeng', number=1001
+
+
+>>> x=5
+>>> print(f'{x+1}')
+6
+
+
+>>> x=5
+>>> print(f'{x+1=}')
+x+1=6
+
+
+>>> import math
+>>> print(f'{math.pi=}')
+math.pi=3.141592653589793
+>>> print(f'{math.pi=:.3}') # 输出3位数，小数位两位
+math.pi=3.14
+
+
+
+1.8  字符串方法
+str.split(st="", num=string.count(str))
+
+>>> say='stay hungry stay foolish'
+>>> print('不提供任何分割符分割后的字符串：',say.split())
+不提供任何分割符分割后的字符串： ['stay', 'hungry', 'stay', 'foolish']
+>>> print('根据字母t分割后的字符串：',say.split('t'))
+根据字母t分割后的字符串： ['s', 'ay hungry s', 'ay foolish']
+
+
+str.strip([chars])
+
+>>>say=' stay hungry stay foolish '  #字符串前后都带有空格
+>>> print(f'原字符串：{say},字符串长度为:{len(say)}')
+原字符串： stay hungry stay foolish ,字符串长度为:26
+>>> print(f'新字符串：{say.strip()},新字符串长度为：{len(say.strip())}')
+新字符串：stay hungry stay foolish,新字符串长度为：24
+>>> say='--stay hungry stay foolish--'
+>>> print(f'原字符串：{say},字符串长度为:{len(say)}')
+原字符串：--stay hungry stay foolish--,字符串长度为:28
+>>> print(f'新字符串：{say.strip("-")},新字符串长度为：{len(say.strip("-"))}')
+新字符串：stay hungry stay foolish,新字符串长度为：24
+
+
+str.join(sequence)
+
+>>> say=('stay hungry','stay foolish')
+>>> new_say=','.join(say)
+>>> print(f'连接后的字符串列表：{new_say}')
+连接后的字符串列表：stay hungry,stay foolish
+>>> path_str='d:','python','study'
+>>> path='/'.join(path_str)
+>>> print(f'python file path:{path}')
+python file path:d:/python/study
+>>> num=['1','2','3','4','a','b']
+>>> plus_num='+'.join(num)
+>>> plus_num
+'1+2+3+4+a+b'
+
+
+>>> field='DO IT NOW'
+>>> print('调用lower得到字符串：',field.lower())
+调用lower得到字符串： do it now
+>>> greeting='Hello,World'
+>>> print('调用lower得到字符串：',greeting.lower())
+调用lower得到字符串：hello,world
+
+
+>>> field='DO IT NOW'
+>>> field.find('It') 		  #field字符串不转换为小写字母，找不到匹配字符串
+-1
+>>> field.lower().find('It')  #field字符串先转换为小写字母，但It不转为小写字母，找不到匹配字符串
+-1
+>>> field.lower().find('It'.lower())  #都使用lower()方法转换成小写字母后查找
+3
+
+
+>>> field='do it now'
+>>> print('调用upper得到字符串：',field.upper())
+调用upper得到字符串： DO IT NOW
+>>> greeting='Hello,World'
+>>> print('调用upper得到字符串：',greeting.upper())
+调用upper得到字符串： HELLO,WORLD
+
+
+>>> field='do it now'
+>>> field.find('It') 					#都不转换为大写，找不到匹配字符串
+-1
+>>> field.upper().find('It') 			#被查找的字符串不转换为大写，找不到匹配字符串
+-1
+>>> field.upper().find('It'.upper()) 		 #使用upper()方法转换为大写后查找
+3
+
+
+>>> field='do it now,do right now'
+>>> print('原字符串：',field)
+原字符串： do it now,do right now
+>>> print('新字符串：',field.replace('do','Just do'))
+新字符串： Just do it now,Just do right now
+>>> print('新字符串：',field.replace('o','Just',1))
+新字符串： dJust it now,do right now
+
+
+>>> say='stay hungry,stay foolish'
+>>> print(f'say字符串的长度是:{len(say)}')
+say字符串的长度是:24
+>>> say.find('stay')
+0
+>>> say.find('hun')
+5
+>>> say.find('sh')
+22
+>>> say.find('python')
+-1
+
+
+>>> say='stay hungry,stay foolish'
+>>> say.find('stay',3)  		#提供起点
+12
+>>> say.find('y',3)  			#提供起点
+3
+>>> say.find('hun',3) 			#提供起点
+5
+>>> say.find('stay',3,10)  		#提供起点和终点
+-1
+>>> say.find('stay',3,15)  		#提供起点和终点
+-1
+>>> say.find('stay',3,18)  		#提供起点和终点
+12

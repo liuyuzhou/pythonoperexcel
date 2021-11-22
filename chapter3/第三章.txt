@@ -1,0 +1,174 @@
+3.2  import的使用
+
+import math
+
+r=5
+print('半径为5的圆的面积为：%.2f' %(math.pi*r**2))
+
+
+D:\python\workspace>python import_test.py
+半径为5的圆的面积为：78.54
+
+
+>>> from math import pi
+>>> print(pi)
+3.141592653589793
+
+
+>>> import math
+>>> print(math.pi)			#math.pi可以被输出
+3.141592653589793
+>>> print(math.sin(1))		#math.sin(1)可以被输出
+0.8414709848078965
+>>> print(math.exp(1))		#math.exp(1)可以被输出
+2.718281828459045
+>>> from math import pi
+>>> print (pi) 			#pi可以被输出
+3.141592653589793
+>>> print(sin(1))			#sin(1)不可以被输出
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'sin' is not defined
+>>> print(exp(1))			#exp(1)不可以被输出
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'exp' is not defined
+
+
+>>> import math
+>>> print(math.pi)
+3.141592653589793
+>>> print(pi)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'pi' is not defined
+>>> from math import pi
+>>> print(pi)
+3.141592653589793
+
+
+from math import pi
+from math import sin
+
+
+>>> import math as m
+>>> m.pi
+3.141592653589793
+
+
+>>> from math import pi as p
+>>> p
+3.141592653589793
+
+
+>>> x,y,z=1,2,3
+>>> print(x,y,z)
+1 2 3
+
+
+>>> x,y,z=1,2,3
+>>> x,y=y,x
+>>> print(x,y,z)
+2 1 3
+
+
+>>> nums=1,2,3
+>>> nums
+(1, 2, 3)
+>>> x,y,z=nums
+>>> x             #获得序列解开的值
+1
+>>> print(x,y,z)
+1 2 3
+
+
+>>> student={'name':'小萌','number':'000'}
+>>> key,value=student.popitem()
+>>> key
+'number'
+>>> value
+'000'
+
+
+>>> x,y,z=1,2,3
+>>> x,y,z
+(1, 2, 3)
+>>> x,y,z=1,2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: not enough values to unpack (expected 3, got 2)
+>>> x,y,z=1,2,3,4,5
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: too many values to unpack (expected 3)
+
+
+>>> x=y=z=10
+>>> x
+10
+
+
+>>> x=10
+>>> y=x
+>>> y
+10
+
+
+>>> x=5
+>>> x+=1   #加
+>>> x
+6
+>>> x-=2 #减
+>>> x
+4
+>>> x*=2 #乘
+>>> x
+8
+>>> x/=4  #除
+>>> x
+2.0
+
+
+>>> field ='Hello,'
+>>> field += 'world'
+>>> field
+'Hello,world'
+>>> field*=2
+>>> field
+'Hello,worldHello,world'
+
+
+>>> True
+True
+>>> False
+False
+>>> True == 1
+True
+>>> False == 0
+True
+>>> True+False+2
+3
+
+
+>>> bool('good good study')
+True
+>>> bool('')
+False
+>>> bool(3)
+True
+>>> bool(0)
+False
+>>> bool([1])
+True
+>>> bool([])
+False
+>>> bool()
+False
+
+
+# if 基本用法
+
+if (greeting := 'hello') == 'hello':
+    print('hello')
+
+

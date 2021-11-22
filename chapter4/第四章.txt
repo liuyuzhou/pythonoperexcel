@@ -1,0 +1,44 @@
+4.1  调 用 函 数
+>>> print('hello world')
+hello world
+>>> type('hello')
+<class 'str'>
+>>> int(12.1)
+12
+
+
+>>> help(abs)
+Help on built-in function abs in module builtins:
+abs(x, /)
+    Return the absolute value of the argument.
+
+
+>>> abs(20)
+20
+>>> abs(-20)
+20
+>>> abs(3.14)
+3.14
+>>> abs(-3.14)
+3.14
+
+
+>>> abs(5,6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: abs() takes exactly one argument (2 given)
+
+
+>>> abs('hello')
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: bad operand type for abs(): 'str'
+
+
+>>> fun=abs  # 变量fun指向abs函数
+>>> fun(-5)  # 所以可以通过fun调用abs函数
+5
+>>> fun(-3.14)  # 所以可以通过fun调用abs函数
+3.14
+>>> fun(3.14)  # 所以可以通过fun调用abs函数
+3.14

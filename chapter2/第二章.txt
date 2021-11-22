@@ -1,0 +1,664 @@
+2.1  通用序列操作
+>>> group_2='56789'#定义变量group_2，并赋值56789
+>>> group_2 [0] #根据编号取元素，使用格式为：在方括号中输入所取元素的编号值
+'5'
+>>> group_2 [1]
+'6'
+>>> group_2 [2]
+'7'
+
+
+>>> group_2[-1]
+'9'
+>>> group_2[-2]
+'8'
+
+
+>>> '56789'[0]
+'5'
+>>> '56789'[1]
+'6'
+>>> '56789'[-1]
+'9'
+
+
+>>> try_fun=input()[0]
+test
+>>> try_fun
+'t'
+
+
+>>> student='0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23, 24,25, 26,27,28,29,30'
+>>> student[10:19]  	# 取得指定序号的元素，加上逗号分隔符，需要取得10个字符
+'5,6,7,8,9'
+>>> student[-17:-1] 	# 负数表明从右开始计数，取得最后6个序号的元素
+'25,26,27,28,29,3'
+
+
+>>> student='0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23, 24,25,26,27,28,29,30'
+>>> student[66:83]  #取得最后6个序号的元素
+'25,26,27,28,29,30'
+
+
+>>> student[-17:0]
+''
+
+>>> number[-3: 0]
+ []
+
+
+>>> student[-17:]  #取得最后6个序号的元素
+ '25,26,27,28,29,30'
+
+>>> student[66:]  #取得最后6个序号的元素
+'25,26,27,28,29,30'
+
+
+>>> student[:]  #取得整个数组
+'0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23, 24,25,26,27,28,29,30'
+
+
+>>> number[0: 10: 1]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+
+>>> student[0:10:2]
+[0, 2, 4, 6, 8]
+
+
+>>> student[1:10:2]
+[1, 3, 5, 7, 9]
+
+
+>>> student[:10:3]
+[0, 3, 6, 9]
+>>> student[2:6:3]
+[2,5 ]
+
+
+>>> student[::3]
+[0, 3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+
+
+>>> student[::0]
+Traceback (most recent call last):
+  File "<pyshell#79>", line 1, in <module>
+    student[::0]
+ValueError: slice step cannot be zero
+
+
+>>> student[10:0:-2]
+[10, 8, 6, 4, 2]
+>>> student[0:10:-2]
+[]
+>>> student[::-2]
+[30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0]
+>>> student[:5:-2]
+[30, 28, 26, 24, 22, 20, 18, 16, 14, 12, 10, 8, 6]
+>>> student[::-1]
+[30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+>>> student[10:0:-1]  		#第二个索引为0，取不到序列中的第一个元素
+[10, 9, 8, 7, 6, 5, 4, 3, 2,1]
+>>> student[10::-1] 		#设置第二个索引为空，可以取到序列的第一个元素
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1,0]
+
+
+>>> [1, 2, 3] + [4, 5, 6]
+[1, 2, 3, 4, 5, 6]
+>>> a = [1, 2]
+>>> b = [5, 6]
+>>> a + b
+[1, 2, 5, 6]
+>>> s = 'hello,'
+>>> w = 'world'
+>>> s + w
+'hello,world'
+
+
+>>> [1, 2] + 'hello'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can only concatenate list (not "str") to list
+>>> type([1, 2])		#取得[1,2]的类型为list
+<class 'list'>
+>>> type('hello')		#取得hello的类型为字符串
+<class 'str'>
+
+
+>>> 'hello' * 5
+'hellohellohellohellohello'
+>>> [7] * 10
+[7, 7, 7, 7, 7, 7, 7, 7, 7, 7]
+
+
+>>> sq=[None] * 5  #初始化sq为含有5个None的序列
+>>> sq
+[None, None, None, None, None]
+
+
+>>> greeting = 'hello,world'
+>>> 'w' in greeting   #检测w是否在字符串中
+True
+>>> 'a' in greeting
+False
+>>> users = ['xiaomeng', 'xiaozhi', 'xiaoxiao']
+>>> 'xiaomeng' in users  #检测字符串是否在字符串列表中
+True
+>>> 'xiaohuai' in users
+False
+
+
+>>> numbers=[300,200,100,800,500]
+>>> len(numbers)
+5
+>>> numbers[5]
+Traceback (most recent call last):
+  File "<pyshell#154>", line 1, in <module>
+    numbers[5]
+IndexError: list index out of range
+>>> numbers[4]
+500
+>>> max(numbers)
+800
+>>> min(numbers)
+100
+
+
+
+2.2  列  表
+
+>>> group=[0,1,2,3,4]
+>>> group[1]=9  	#索引下标为1的元素重新赋值为9
+>>> group
+[0, 9, 2, 3, 4]
+>>> group[3]=30 	#同理，可以将索引下标为3的元素重新赋值为30
+>>> group
+[0, 9, 2, 30, 4]
+
+
+>>> group[2]='xiaomeng' 	#对编号为2的元素赋值，赋一个字符串
+>>> group
+[0, 9, 'xiaomeng', 30, 4]
+>>> type(group)
+<class 'list'>
+>>> type(group[1])  		#别忘了查看类型函数的使用
+<class 'int'>
+>>> type(group[2])
+<class 'str'>
+
+
+>>> group
+[0, 9, 'xiaomeng', 30, 4]
+>>> group[5]='try'
+Traceback (most recent call last):
+  File "<pyshell#134>", line 1, in <module>
+    group[5]='try'
+IndexError: list assignment index out of range
+
+
+>>> group
+[0, 9, 'xiaomeng', 30, 4]
+>>> group.append('try')
+>>> group
+[0, 9, 'xiaomeng', 30, 4, 'try']
+
+
+>>> group
+[0, 9, 'xiaomeng', 30, 4, 'try']
+>>> group.append('test') 		#向列表添加字符串
+>>> group
+[0, 9, 'xiaomeng', 30, 4, 'try', 'test']
+>>> group.append(3) 			#向列表添加数字
+>>> group
+[0, 9, 'xiaomeng', 30, 4, 'try', 'test',3]
+
+
+>>> group
+[0, 9, 'xiaomeng', 30, 4, 'try', 'test']
+>>> len(group)    	#使用序列中获取长度的函数
+7
+>>> del group[6] 	#删除最后一个元素，注意索引下标与序列长度的关系
+>>> print('删除最后一个元素后的结果：',group)
+删除最后一个元素后的结果： [0, 9, 'xiaomeng', 30, 4, 'try']
+>>> len(group)
+6
+>>> group
+[0, 9, 'xiaomeng', 30, 4, 'try']
+>>> del group[2]  	#删除索引下标为2的元素
+>>> print('删除索引下标为2的元素后的结果：',group)
+删除索引下标为2的元素后的结果： [0, 9, 30, 4, 'try']
+>>> len(group)
+5
+
+
+>>> group
+[0, 9, 30, 4, 'try']
+>>> len(group)
+5
+>>> del group[3]
+>>> print('删除索引下标为3的元素后的结果：',group)
+删除索引下标为3的元素后的结果： [0, 9, 30, 'try']
+>>> len(group)
+4
+
+
+>>> list('北京将举办2020年的冬奥会')
+['北', '京', '将', '举', '办', '2', '0', '2', '0', '年', '的', '冬', '奥', '会']
+>>> greeting=list('welcome to beijing')
+>>> greeting
+['w', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'b', 'e', 'i', 'j', 'i', 'n', 'g']
+>>> greeting[11:18]
+['b', 'e', 'i', 'j', 'i', 'n', 'g']
+>>> greeting[11:18]=list('china')
+>>> greeting
+['w', 'e', 'l', 'c', 'o', 'm', 'e', ' ', 't', 'o', ' ', 'c', 'h', 'i', 'n', 'a']
+
+
+>>> greeting = list('hi')
+>>> greeting
+['h', 'i']
+>>> greeting[1:] = list('ello')
+>>> greeting
+['h', 'e', 'l', 'l', 'o']
+
+
+>>> field = list('ae')
+>>> field
+['a', 'e']
+>>> field[1: 1] = list('bcd')
+>>> field
+['a', 'b', 'c', 'd', 'e']
+>>> goodnews = list('北京将举办冬奥会')
+>>> goodnews
+['北', '京', '将', '举', '办', '冬', '奥', '会']
+>>> goodnews[5: 5] = list('2022年的')
+>>> goodnews
+['北', '京', '将', '举', '办', '2', '0', '2', '2', '年', '的', '冬', '奥', '会']
+
+
+>>> field = list('abcde')
+>>> field
+['a', 'b', 'c', 'd', 'e']
+>>> field[1: 4] = []
+>>> field
+['a', 'e']
+>>> field = list('abcde')
+>>> del field[1: 4]
+>>> field
+['a', 'e']
+>>> goodnews = list('北京将举办2022年的冬奥会')
+>>> goodnews
+['北', '京', '将', '举', '办', '2', '0', '2', '2', '年', '的', '冬', '奥', '会']
+>>> goodnews[5: 11] = []
+>>> goodnews
+['北', '京', '将', '举', '办', '冬', '奥', '会']
+
+
+>>> a=['hello','world']
+>>> b=['python','is','funny']
+>>> a.extend(b)
+>>> a
+['hello', 'world', 'python', 'is', 'funny']
+
+
+>>> num=[5,8,1,3,6]
+>>> num.sort()
+>>> print('num调用sort方法后：',num)
+num调用sort方法后： [1, 3, 5, 6, 8]
+
+
+>>> num=[5,8,1,3,6]
+>>> n=sorted(num)
+>>> print('变量n的操作结果是:',n)
+变量n的操作结果是: [1, 3, 5, 6, 8]
+>>> print('num的结果是:',num)  	#num保持原样
+num的结果是: [5, 8, 1, 3, 6]
+
+
+>>> sorted('python')
+['h', 'n', 'o', 'p', 't', 'y']
+>>> sorted('321')
+['1', '2', '3']
+
+
+>>> field=['study','python','is','happy']
+>>> field.clear()
+>>> print('field调用clear方法后的结果:',field)
+field调用clear方法后的结果: []
+
+
+>>> field=list('hello,world')
+>>> field
+['h', 'e', 'l', 'l', 'o', ',', 'w', 'o', 'r', 'l', 'd']
+>>> print('列表field中，字母o的个数：',field.count('o'))	  #统计列表中的字符个数
+列表field中，字母o的个数： 2
+>>> listobj=[123, 'hello', 'world', 123]
+>>> listobj=[26, 'hello', 'world', 26]
+>>> print('数字26 的个数：',listobj.count(26))
+数字26 的个数： 2
+>>> print('hello的个数：',listobj.count('hello'))#统计字符串个数
+hello的个数： 1
+>>> ['a','c','a','f','a'].count('a')
+3
+
+
+>>> num=[1,2,3]
+>>> print('插入之前的num：',num)
+插入之前的num： [1, 2, 3]
+>>> num.insert(2,'插入位置在2之后，3之前')
+>>> print('插入之后的num：',num)
+插入之后的num： [1, 2, '插入位置在2之后，3之前', 3]
+
+
+
+2.3  元    组
+
+>>> 1, 2, 3
+(1, 2, 3)
+>>> 'hello', 'world'
+('hello', 'world')
+
+
+>>> 5,6,7
+(5, 6, 7)
+>>> (5,6,7)
+(5, 6, 7)
+>>> 'hi','python'
+('hi', 'python')
+>>> ('hi','python')
+('hi', 'python')
+
+
+>>> ()
+()
+
+
+>>> (1)
+1
+>>> 1,
+(1,)
+>>> (1,)
+(1,)
+
+
+>>> tuple(['hello', 'world'])
+('hello', 'world')
+>>> tuple('hello')
+('h', 'e', 'l', 'l', 'o')
+>>> tuple(('hello', 'world'))  #参数是元组
+('hello', 'world')
+
+
+>>> tuple(['hi','python'])  	#列表转元组
+('hi', 'python')
+>>> list(('hi', 'python')) 	#元组转列表
+['hi', 'python']
+
+
+>>> strnum=('hi','python',2017,2018)
+>>> print('strnum[1] is:',strnum[1])
+strnum[1] is: python
+>>> print('strnum[3] is:',strnum[3])
+strnum[3] is: 2018
+>>> numbers=(1,2,3,4,5,6)
+>>> print('numbers[5] is:',numbers[5])
+numbers[5] is: 6
+>>> print('numbers[1:3] is:',numbers[1:3])
+numbers[1:3] is: (2, 3)
+
+
+>>> greeting=('hi','python')
+>>> yearnum=(2018,)
+>>> print ("合并结果为: ", greeting+yearnum)
+合并结果为:  ('hi', 'python', 2018)
+
+
+>>> greeting=('hi','python')
+>>> greeting
+('hi', 'python')
+>>> print('删除元组greeting前：',greeting)
+删除元组greeting前： ('hi', 'python')
+>>> del greeting
+>>> print('删除元组greeting后：',greeting)
+Traceback (most recent call last):
+  File "<pyshell#281>", line 1, in <module>
+    print('删除元组greeting后：',greeting)
+NameError: name 'greeting' is not defined
+>>> greetingTraceback (most recent call last):  File "<pyshell#282>", line 1, in <module>
+    greeting
+NameError: name 'greeting' is not defined
+
+
+2.4  字典的使用
+
+>>> students=['小萌','小智','小强','小张','小李']
+>>> numbers=['000','001','002','003','004']
+>>> index_num=students.index("小智")
+>>> print(f'小智在students中的索引下标是：{index_num}')
+小智在students中的索引下标是：1
+>>> xiaozhi_num=numbers[index_num]
+>>> print(f'小智在numbers中的序号是：{xiaozhi_num}')
+小智在numbers中的序号是：001
+
+>>> print('小智的序号是：',numbers['小智'])
+小智的学号是： 001
+
+
+>>> dict_define={'小萌': '000', '小智': '001', '小强': '002'}
+>>> dict_define
+{'小萌': '000', '小智': '001', '小强': '002'}
+
+
+>>> dict_1={'abc': 456}
+>>> dict_1
+{'abc': 456}
+>>> dict_2={'abc': 123, 98.6: 37}
+>>> dict_2
+{'abc': 123, 98.6: 37}
+
+
+>>> student=[('name','小智'),('number','001')]
+>>> student
+[('name', '小智'), ('number', '001')]
+>>> type(student)
+<class 'list'>
+>>> student_info=dict(student)
+>>> type(student_info)
+<class 'dict'>
+>>> print(f'学生信息：{student_info}')
+学生信息：{'name': '小智', 'number': '001'}
+>>> student_name=student_info['name']
+>>> print(f'学生姓名：{student_name}')
+学生姓名：小智
+>>> student_num=student_info['number']   #从字典中轻松获取学生序号
+>>> print(f'学生序号：{student_num}')
+学生学号：001
+
+
+>>> student_info=dict(name='小智',number='001')
+>>> print(f'学生信息：{student_info}')
+学生信息：{'name': '小智', 'number': '001'}
+
+
+>>> student_info=dict(name='小智',number='001')
+>>> student_info[1]
+Traceback (most recent call last):
+  File "<pyshell#139>", line 1, in <module>
+    student_info[1]
+KeyError: 1
+
+
+>>> student={'小萌':'000','小智':'001','小强':'002'}
+>>> print(f'更改前，student：{student}')
+更改前，student：{'小萌': '000', '小智': '001', '小强': '002'}
+>>> xiaoqiang_num=student['小强']
+>>> print(f'更改前，小强的序号是：{xiaoqiang_num}')
+更改前，小强的序号是：002
+>>> student['小强']='005'  #更新小强的序号为005
+>>> xiaoqiang_num=student['小强']
+>>> print(f'更改后，小强的序号是：{xiaoqiang_num}')
+更改后，小强的序号是：005
+>>> print(f'更改后，student：{student}')
+更改后，student：{'小萌': '000', '小智': '001', '小强': '005'}
+
+
+>>> student={'小强': '002', '小萌': '000', '小智': '001', '小张': '003'}
+>>> print(f'删除前:{student}')
+删除前:{'小强': '002', '小萌': '000', '小智': '001', '小张': '003'}
+>>> del student['小张']  #删除 键值为“小张”的键
+>>> print(f'删除后:{student}')
+删除后:{'小强': '002', '小萌': '000', '小智': '001'}
+
+
+>>> student={'小强': '002', '小萌': '000', '小智': '001', '小张': '003'}
+>>> print(f'删除前:{student}')
+删除前:{'小强': '002', '小萌': '000', '小智': '001', '小张': '003'}
+>>> del student  #删除整个字典
+>>> print(f'删除后:{student}')
+Traceback (most recent call last):
+  File "<pyshell#7>", line 1, in <module>
+    print(f'删除后:{student}')
+NameError: name 'student' is not defined
+
+
+>>> student={'小萌': '000', '小智': '001', '小萌': '002'}  #小萌赋两次值，第一次000，第二次002
+>>> print(f'学生信息：{student}')
+学生信息：{'小萌': '002', '小智': '001'}   #输出结果中小萌的值为002
+
+
+>>> student={('name',):'小萌','number':'000'}
+>>> print(f'学生信息：{student}')
+学生信息：{('name',): '小萌', 'number': '000'}
+>>> student={['name']:'小萌','number':'000'}
+Traceback (most recent call last):
+  File "<pyshell#11>", line 1, in <module>
+    student={['name']:'小萌','number':'000'}
+TypeError: unhashable type: 'list'
+
+
+>>> student={'小萌': '000', '小智': '001', '小强': '002','小张': '003', '小李': '004'}
+>>> print(f'字典元素个数为：{len(student)}')
+字典元素个数为：5
+
+
+>>> student={'小萌': '000', '小智': '001', '小强': '002','小张': '003', '小李': '004'}
+>>> print(f'字典的类型为：{type(student)}')
+字典的类型为：<class 'dict'>
+
+
+>>> student={'小萌': '000', '小智': '001'}
+>>> print (f'小萌的学号为: {num})')
+小萌的学号为: 000)
+>>> st={}
+>>> print(st['name'])
+Traceback (most recent call last):
+  File "<pyshell#28>", line 1, in <module>
+    print(st['name'])
+KeyError: 'name'
+>>> print(st.get('name'))
+None
+>>> name=st.get('name')
+>>> print(f'name的值为：{name}')
+name的值为：None
+
+
+>>> st={}
+>>> name=st.get('name','未指定')
+>>> print(f'name的值为：{name}')
+name的值为：未指定
+
+
+>>> student={'小萌': '000', '小智': '001'}
+>>> all_keys=student.keys()
+>>> print(f'字典student所有键为：{all_keys}')
+字典student所有键为：dict_keys(['小萌', '小智'])
+>>> print(f'字典student所有键为：{list(all_keys)}')  #keys()得到元组数组，转成list，便于观看
+字典student所有键为：['小萌', '小智']
+
+
+>>> student={'小萌': '000', '小智': '1002','小李':'002'}
+>>> all_values=student.values()
+>>> print(f'student字典所有值为：{all_values}')
+student字典所有值为：dict_values(['000', '1002', '002'])
+>>> print(f'student字典所有值为：{list(all_values)}') #values()得到元组数组，转成list，便于观看
+student字典所有值为：['000', '1002', '002']
+
+
+>>> student={'小萌': '000', '小智': '001'}
+>>> student2={'小李':'003'}
+>>> print(f'原student字典为：{student}')
+原student字典为：{'小萌': '000', '小智': '001'}
+>>> student.update(student2)
+>>> print(f'新student字典为：{student}')
+新student字典为：{'小萌': '000', '小智': '001', '小李': '003'}
+>>> student3={'小李':'005'}
+>>> student.update(student3)  #对相同项覆盖
+>>> print(f'新student字典为：{student}')
+新student字典为：{'小萌': '000', '小智': '001', '小李': '005'}
+
+
+2.5  集    合
+
+>>> student={}
+>>> print(f'student对象的类型为:{type(student)}')
+student对象的类型为:<class 'dict'>
+>>> number={1,2,3}
+>>> print(f'number对象的类型为:{type(number)}')
+number对象的类型为:<class 'set'>
+
+
+>>> numbers={1,2,3,4,5,3,2,1,6}
+>>> numbers
+{1, 2, 3, 4, 5, 6}
+
+
+>>> numbers={1,2,3,4,5}
+>>> numbers[2]
+Traceback (most recent call last):
+  File "<pyshell#143>", line 1, in <module>
+    numbers[2]
+TypeError: 'set' object does not support indexing
+
+
+>>> numbers={1,2,3,4,5}
+>>> print(f'numbers变量的类型为:{type(numbers)}')
+numbers变量的类型为:<class 'set'>
+>>> numbers
+{1, 2, 3, 4, 5}
+>>> name=set('abc')  #一个元素，仔细观察输出结果
+>>> name
+{'a', 'b', 'c'}
+>>> print(f'name变量的类型为:{type(name)}')
+name变量的类型为:<class 'set'>
+>>> students=set(['小萌','小智'])   #一个列表
+>>> students
+{'小萌', '小智'}
+>>> print(f'students变量的类型为:{type(students)}')
+students变量的类型为:<class 'set'>
+
+
+>>> numbers=set([1,2])
+>>> print(f'numbers变量为:{numbers}')
+numbers变量为:{1, 2}
+>>> numbers.add(3)
+>>> print(f'增加元素后，numbers变量为:{numbers}')
+增加元素后，numbers变量为:{1, 2, 3}
+
+
+>>> students=set(['小萌','小智','小张'])
+>>> print(f'students变量为:{students}')
+students变量为:{'小萌', '小张', '小智'}
+>>> students.remove('小张')
+>>> print(f'删除元素小张后，students变量为:{students}')
+删除元素小张后，students变量为:{'小萌', '小智'}
+
+
+>>> numbers={1,2,3,4,5}
+>>> 2 in numbers
+True
+>>> 2 not in numbers
+False
+>>> 'a' in numbers
+False
+>>> 'a' not in numbers
+True
